@@ -32,9 +32,25 @@ export default function ProductCard({ product }: { product: Product }) {
           </span>
           <button
             onClick={() => addToCart(product)}
-            className="bg-[#2D336B] text-[#FFF2F2] px-4 py-1.5 rounded-lg hover:bg-[#7886C7] transition-all text-sm cursor-pointer"
+            className=" bg-[#2D336B] text-[#FFF2F2] px-2 py-2 rounded-full hover:bg-[#7886C7] transition-all text-sm cursor-pointer"
           >
-            Add to Cart
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <path d="M6 7V6a6 6 0 0112 0v1" />
+              <path d="M3 7h18l-1.5 14.5a2 2 0 01-2 1.5H6.5a2 2 0 01-2-1.5L3 7z" />
+              <path d="M16 11a4 4 0 01-8 0" />
+              <path d="M12 17v4" />
+              <path d="M10 19h4" />
+            </svg>
           </button>
         </div>
       </div>

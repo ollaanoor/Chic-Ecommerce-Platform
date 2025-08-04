@@ -15,6 +15,8 @@ export default function CartItemCard({ item }: { item: cartItem }) {
           <Image
             src={item.imageUrl}
             alt={item.title}
+            width={96}
+            height={96}
             className="w-24 h-24 object-cover rounded-lg"
           />
         </div>
@@ -29,7 +31,7 @@ export default function CartItemCard({ item }: { item: cartItem }) {
           </p>
         </div>
       </div>
-      <div className="flex items-center justify-center gap-4">
+      <div className="flex items-center justify-between md:justify-center gap-4">
         <div className="flex gap-3 justify-center items-center">
           <button
             onClick={() => decreaseQty(item._id)}

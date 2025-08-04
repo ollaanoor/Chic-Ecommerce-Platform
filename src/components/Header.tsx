@@ -22,25 +22,27 @@ export default function Header() {
           </Link>
         </nav>
 
-        <div>
+        <div className="space-x-2">
           <Link href="/cart">
             <button className="relative hover:bg-[#7886C7] px-2 py-2 rounded-full transition cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                width="24"
+                height="24"
                 fill="none"
-                viewBox="0 0 24 24"
                 stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.6 8h11.2M7 13L5.4 5M16 21a1 1 0 100-2 1 1 0 000 2zm-8 0a1 1 0 100-2 1 1 0 000 2z"
-                />
+                <path d="M6 7V6a6 6 0 0112 0v1" />
+                <path d="M3 7h18l-1.5 14.5a2 2 0 01-2 1.5H6.5a2 2 0 01-2-1.5L3 7z" />
+                <path d="M16 11a4 4 0 01-8 0" />
               </svg>
+
               {itemsCount > 0 && (
-                <span className="absolute -top-1 -right-2 bg-[#A9B5DF] text-[#2D336B] text-xs font-semibold rounded-full px-2 py-0.5 shadow">
+                <span className="absolute -top-0 -right-1 bg-[#A9B5DF] text-[#2D336B] text-xs font-semibold rounded-full px-2 py-0.5 shadow">
                   {itemsCount}
                 </span>
               )}

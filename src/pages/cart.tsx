@@ -11,7 +11,7 @@ export default function Cart() {
           Your cart is empty.
         </p>
       ) : (
-        <div className="space-y-6 p-20">
+        <div className="space-y-6 p-10 md:p-20">
           <div className="space-y-4">
             {cartItems.map((item) => (
               <CartItemCard key={item._id} item={item}/>

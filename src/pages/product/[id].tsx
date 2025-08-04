@@ -30,7 +30,7 @@ export default function ProductDetails({ product }: any) {
   // }
 
   return (
-    <div className="max-w-5xl mx-auto py-32 bg-white">
+    <div className="max-w-5xl mx-auto py-32 p-6 bg-white">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="relative w-full h-80 md:h-[450px]">
           <Image
