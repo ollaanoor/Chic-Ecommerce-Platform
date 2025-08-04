@@ -1,30 +1,37 @@
 import Image from "next/image";
-import { Product } from "@/types/product";
-import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
 import { useCart } from "@/context/cartContext";
-import Loading from "@/components/Loading";
+import { GetServerSideProps } from "next";
+// import Loading from "@/components/Loading";
 
-export default function ProductDetails() {
-  const [product, setProduct] = useState<Product>();
-  const { id } = useParams();
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { id } = context.params!;
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const res = await fetch(`${baseUrl}/api/products/${id}`);
+
+  if (!res.ok) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const product = await res.json();
+
+  return {
+    props: { product },
+  };
+};
+
+export default function ProductDetails({ product }: any) {
   const { addToCart } = useCart();
 
-  useEffect(() => {
-    fetch(`/api/products/${id}`)
-      .then((res) => res.json())
-      .then((data) => setProduct(data));
-  }, [id]);
-
-  if (!product) {
-    return <Loading />;
-  }
+  // if (!product) {
+  //   return <Loading />;
+  // }
 
   return (
     <div className="max-w-5xl mx-auto py-32 bg-white">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-
         <div className="relative w-full h-80 md:h-[450px]">
           <Image
             src={product.imageUrl}

@@ -1,5 +1,3 @@
-"use client";
-
 import ProductCard from "@/components/ProductCard";
 import { Product } from "@/types/product";
 import Link from "next/link";
@@ -15,6 +13,10 @@ export default function Home() {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+
+  if (!products) {
+    return <Loading />;
+  }
 
   return (
     <>
