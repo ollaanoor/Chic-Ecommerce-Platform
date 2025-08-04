@@ -9,13 +9,12 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <div className="bg-white rounded-2xl shadow-md overflow-hidden transition-transform hover:scale-[1.02] hover:shadow-lg">
       <Link href={`/product/${product._id}`}>
-        <div className="relative w-full h-48 sm:h-56 md:h-64">
+        <div className="relative w-full h-30 sm:h-56 md:h-64">
           <Image
             src={product.imageUrl}
             alt={product.title}
             fill
-            style={{ objectFit: "cover" }}
-            className="rounded-t-2xl"
+            className="rounded-t-2xl object-cover"
           />
         </div>
       </Link>
@@ -36,14 +35,13 @@ export default function ProductCard({ product }: { product: Product }) {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
               fill="none"
               stroke="currentColor"
               stroke-width="1.8"
               stroke-linecap="round"
               stroke-linejoin="round"
               viewBox="0 0 24 24"
+              className="size-4 md:size-6"
             >
               <path d="M6 7V6a6 6 0 0112 0v1" />
               <path d="M3 7h18l-1.5 14.5a2 2 0 01-2 1.5H6.5a2 2 0 01-2-1.5L3 7z" />
