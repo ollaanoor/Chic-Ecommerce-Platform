@@ -26,7 +26,7 @@ export default function Home() {
           src="/hero.png"
           alt="Hero Illustration"
           fill
-          className="object-cover"
+          className="object-fit md:object-cover"
           priority
         />
 
@@ -55,7 +55,7 @@ export default function Home() {
         data-aos="fade-up"
         className="font-sans grid grid-rows-[20px_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-white"
       >
-        <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start w-full max-w-7xl">
+        <main className="flex flex-col gap-[32px] row-start-3 items-center sm:items-start w-full max-w-7xl">
           <div className="w-full">
             <div className="text-center sm:text-left mb-8">
               <h1 className="text-4xl font-bold text-[#2D336B] mb-2">
@@ -65,7 +65,7 @@ export default function Home() {
                 Discover our curated collection
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {products.map((product) => (
                 <ProductCard key={product._id} product={product} />
               ))}
