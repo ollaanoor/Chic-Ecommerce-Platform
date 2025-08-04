@@ -5,6 +5,7 @@ import { Product } from "@/types/product";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Loading from "@/components/Loading";
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -34,7 +35,8 @@ export default function Home() {
             Discover Unique Products
           </h1>
           <p className="text-[#2D336B] text-xl max-w-2xl mb-6">
-            Handpicked selections, unbeatable value and a shopping experience like no other.
+            Handpicked selections, unbeatable value and a shopping experience
+            like no other.
           </p>
           <Link href="/#products">
             <button className="bg-[#2D336B] hover:bg-[#7886C7] text-white px-6 py-3 rounded-xl text-lg transition cursor-pointer">
@@ -45,7 +47,12 @@ export default function Home() {
       </section>
 
       {/* Products section */}
-      <div id="products" data-aos="fade-up" className="font-sans grid grid-rows-[20px_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-white">
+      {!products && <Loading />}
+      <div
+        id="products"
+        data-aos="fade-up"
+        className="font-sans grid grid-rows-[20px_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-white"
+      >
         <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start w-full max-w-7xl">
           <div className="w-full">
             <div className="text-center sm:text-left mb-8">

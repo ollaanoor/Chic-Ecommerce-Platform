@@ -1,5 +1,6 @@
 import { useCart } from "@/context/cartContext";
 import { cartItem } from "@/types/cartItem";
+import Image from "next/image";
 
 export default function CartItemCard({ item }: { item: cartItem }) {
   const { increaseQty, decreaseQty, removeFromCart } = useCart();
@@ -11,7 +12,7 @@ export default function CartItemCard({ item }: { item: cartItem }) {
     >
       <div className="flex flex-row items-start md:items-center gap-4">
         <div className="flex items-center gap-4">
-          <img
+          <Image
             src={item.imageUrl}
             alt={item.title}
             className="w-24 h-24 object-cover rounded-lg"

@@ -1,4 +1,4 @@
-# [Chic E-commerce Platform]
+# Chic E-commerce Platform
 
 An eCommerce web application built with **Next.js** and **MongoDB**, and using **Next.js API**.
 
